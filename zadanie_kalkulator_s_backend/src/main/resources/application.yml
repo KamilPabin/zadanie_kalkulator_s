@@ -3,7 +3,7 @@ application:
 
 
 NBPClient:
-  url: http://api.nbp.pl/api/
+  url: http://api.nbp.pl/api
   connectTimeout: 2000
   connectionRequestTimeout: 1000
   readTimeout: 2000
