@@ -1,4 +1,4 @@
-package com.pabin.kamil.zadanie_kalkulator_s;
+package com.pabin.kamil.zadanie_kalkulator_s.Configuration;
 
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.springframework.beans.factory.annotation.Value;

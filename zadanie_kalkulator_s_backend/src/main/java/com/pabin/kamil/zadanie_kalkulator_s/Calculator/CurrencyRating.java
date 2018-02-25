@@ -1,4 +1,4 @@
-package com.pabin.kamil.zadanie_kalkulator_s;
+package com.pabin.kamil.zadanie_kalkulator_s.Calculator;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -21,9 +21,9 @@ public class CurrencyRating {
     public static class Rates {
 
         @JsonProperty("bid")
-        double buyFor;
+        String buyFor;
 
         @JsonProperty("ask")
-        double sellFor;
+        String sellFor;
     }
 }

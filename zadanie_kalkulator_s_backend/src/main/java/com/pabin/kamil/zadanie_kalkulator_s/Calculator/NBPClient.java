@@ -1,4 +1,4 @@
-package com.pabin.kamil.zadanie_kalkulator_s;
+package com.pabin.kamil.zadanie_kalkulator_s.Calculator;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -7,13 +7,13 @@ import org.springframework.web.client.RestTemplate;
 
 
 @Service
-public class NBPClientImpl implements NBPClient {
+public class NBPClient implements CurrencyRatingClient {
 
     private RestTemplate nbpRestTemplate;
     private String url;
 
-    public NBPClientImpl(RestTemplate nbpRestTemplate,
-                         @Value("${NBPClient.url}") String url) {
+    public NBPClient(RestTemplate nbpRestTemplate,
+                     @Value("${NBPClient.url}") String url) {
         this.nbpRestTemplate = nbpRestTemplate;
         this.url = url;
     }

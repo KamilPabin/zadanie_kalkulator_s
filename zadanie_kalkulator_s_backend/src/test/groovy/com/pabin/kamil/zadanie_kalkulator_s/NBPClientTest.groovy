@@ -1,5 +1,6 @@
 package com.pabin.kamil.zadanie_kalkulator_s
 
+import com.pabin.kamil.zadanie_kalkulator_s.Calculator.CurrencyRatingClient
 import com.pabin.kamil.zadanie_rekrutacyjne_s.IntegrationTest
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
@@ -8,7 +9,7 @@ import org.springframework.web.client.HttpClientErrorException
 class NBPClientTest extends IntegrationTest {
 
     @Autowired
-    NBPClient nbpClient
+    CurrencyRatingClient nbpClient
 
     def "should return actual ratings for EURO"() {
 
