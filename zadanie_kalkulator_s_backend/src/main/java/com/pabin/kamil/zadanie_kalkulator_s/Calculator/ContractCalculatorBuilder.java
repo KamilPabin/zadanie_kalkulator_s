@@ -1,12 +1,18 @@
 package com.pabin.kamil.zadanie_kalkulator_s.Calculator;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public abstract class ContractCalculatorBuilder {
+
+
+    protected CurrencyRatingClient nbpClient;
+
     protected ContractCalculator contractCalculator;
 
-    @Autowired
-    protected CurrencyRatingClient currencyRatingClient;
+    public ContractCalculatorBuilder(CurrencyRatingClient nbpClient) {
+        this.nbpClient = nbpClient;
+    }
 
     public ContractCalculator getContractCalculator() {
         return contractCalculator;

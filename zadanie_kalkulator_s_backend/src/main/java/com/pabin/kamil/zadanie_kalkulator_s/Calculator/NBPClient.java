@@ -2,11 +2,10 @@ package com.pabin.kamil.zadanie_kalkulator_s.Calculator;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-
-@Service
+@Component
 public class NBPClient implements CurrencyRatingClient {
 
     private RestTemplate nbpRestTemplate;
@@ -21,7 +20,7 @@ public class NBPClient implements CurrencyRatingClient {
     @Override
     public CurrencyRating getRatingFor(String currencyCode) {
         ResponseEntity<CurrencyRating> responseEntity = nbpRestTemplate.getForEntity(url +
-                        "exchangerates/rates/C/" + currencyCode,
+                        "/exchangerates/rates/c/" + currencyCode,
                 CurrencyRating.class);
         return responseEntity.getBody();
     }

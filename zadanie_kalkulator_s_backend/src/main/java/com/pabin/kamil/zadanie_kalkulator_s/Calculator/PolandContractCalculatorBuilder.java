@@ -4,6 +4,10 @@ import java.math.BigDecimal;
 
 public class PolandContractCalculatorBuilder extends ContractCalculatorBuilder {
 
+    public PolandContractCalculatorBuilder(CurrencyRatingClient nbpClient) {
+        super(nbpClient);
+    }
+
     @Override
     public void buildTax() {
         contractCalculator.setTax(new BigDecimal("0.19"));

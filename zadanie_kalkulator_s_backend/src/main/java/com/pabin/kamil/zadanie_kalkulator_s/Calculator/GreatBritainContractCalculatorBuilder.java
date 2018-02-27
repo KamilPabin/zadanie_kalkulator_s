@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 
 public class GreatBritainContractCalculatorBuilder extends ContractCalculatorBuilder {
 
+    public GreatBritainContractCalculatorBuilder(CurrencyRatingClient nbpClient) {
+        super(nbpClient);
+    }
 
     @Override
     public void buildTax() {
@@ -12,7 +15,7 @@ public class GreatBritainContractCalculatorBuilder extends ContractCalculatorBui
 
     @Override
     public void buildRating() {
-        CurrencyRating rating = currencyRatingClient.getRatingFor("gbp");
+        CurrencyRating rating = nbpClient.getRatingFor("gbp");
         contractCalculator.setRating(new BigDecimal(rating.rates.get(0).buyFor));
     }
 
