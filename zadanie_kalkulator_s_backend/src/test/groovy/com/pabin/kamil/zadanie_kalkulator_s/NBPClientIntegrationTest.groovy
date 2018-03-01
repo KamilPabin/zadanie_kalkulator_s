@@ -1,12 +1,11 @@
 package com.pabin.kamil.zadanie_kalkulator_s
 
 import com.pabin.kamil.zadanie_kalkulator_s.Calculator.CurrencyRatingClient
-import com.pabin.kamil.zadanie_rekrutacyjne_s.IntegrationTest
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.web.client.HttpClientErrorException
 
-class NBPClientTest extends IntegrationTest {
+class NBPClientIntegrationTest extends IntegrationTest {
 
     @Autowired
     CurrencyRatingClient nbpClient
@@ -16,7 +15,7 @@ class NBPClientTest extends IntegrationTest {
         given:
         stubNBPService(200, '{"table":"C","currency":"euro","code":"EUR",' +
                 '"rates":[{"no":"037/C/NBP/2018","effectiveDate":"2018-02-21","bid":4.1057,"ask":4.1887}]}',
-                '/exchangerates/rates/C/eur')
+                '/exchangerates/rates/c/eur')
 
         when:
         def result = nbpClient.getRatingFor("eur");

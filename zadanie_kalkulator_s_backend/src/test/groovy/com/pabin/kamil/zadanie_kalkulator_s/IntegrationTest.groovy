@@ -1,4 +1,4 @@
-package com.pabin.kamil.zadanie_rekrutacyjne_s
+package com.pabin.kamil.zadanie_kalkulator_s
 
 import com.github.tomakehurst.wiremock.client.WireMock
 import com.github.tomakehurst.wiremock.junit.WireMockClassRule
