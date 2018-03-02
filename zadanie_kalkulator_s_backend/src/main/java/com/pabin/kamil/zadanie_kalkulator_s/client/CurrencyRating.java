@@ -1,4 +1,4 @@
-package com.pabin.kamil.zadanie_kalkulator_s.Calculator;
+package com.pabin.kamil.zadanie_kalkulator_s.client;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,21 +9,21 @@ import java.util.ArrayList;
 public class CurrencyRating {
 
     @JsonProperty("currency")
-    String currency;
+    public String currency;
 
     @JsonProperty("code")
-    String currencyCode;
+    public String currencyCode;
 
     @JsonProperty("rates")
-    ArrayList<Rates> rates;
+    public ArrayList<Rates> rates;
 
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class Rates {
 
         @JsonProperty("bid")
-        String buyFor;
+        public String buyFor;
 
         @JsonProperty("ask")
-        String sellFor;
+        public String sellFor;
     }
 }

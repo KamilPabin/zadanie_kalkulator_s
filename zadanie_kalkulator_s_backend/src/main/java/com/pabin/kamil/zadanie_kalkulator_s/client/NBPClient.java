@@ -1,4 +1,4 @@
-package com.pabin.kamil.zadanie_kalkulator_s.Calculator;
+package com.pabin.kamil.zadanie_kalkulator_s.client;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;

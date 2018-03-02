@@ -1,17 +1,19 @@
 package com.pabin.kamil.zadanie_kalkulator_s.ContractCalculator
 
-import com.pabin.kamil.zadanie_kalkulator_s.Calculator.ContractCalculator
+import com.pabin.kamil.zadanie_kalkulator_s.calculator.ContractCalculator
 import spock.lang.Specification
 
 class ContractCalculatorTest extends Specification {
 
     def "should calculate net monthly salary"() {
 
-        when:
+        given:
         def calc = new ContractCalculator()
         calc.setLivingCost(livingCost)
         calc.setRating(rating)
         calc.setTax(tax)
+
+        when:
         def result = calc.calculateNetMonthlySalary(dailySalary)
 
         then:

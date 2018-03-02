@@ -1,4 +1,6 @@
-package com.pabin.kamil.zadanie_kalkulator_s.Calculator;
+package com.pabin.kamil.zadanie_kalkulator_s.calculator;
+
+import com.pabin.kamil.zadanie_kalkulator_s.client.CurrencyRatingClient;
 
 import java.math.BigDecimal;
 

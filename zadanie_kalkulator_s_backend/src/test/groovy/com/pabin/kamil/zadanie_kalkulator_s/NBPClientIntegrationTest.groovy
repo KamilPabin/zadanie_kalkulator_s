@@ -1,6 +1,6 @@
 package com.pabin.kamil.zadanie_kalkulator_s
 
-import com.pabin.kamil.zadanie_kalkulator_s.Calculator.CurrencyRatingClient
+import com.pabin.kamil.zadanie_kalkulator_s.client.CurrencyRatingClient
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.web.client.HttpClientErrorException

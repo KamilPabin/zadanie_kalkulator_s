@@ -1,7 +1,8 @@
 package com.pabin.kamil.zadanie_kalkulator_s;
 
-import com.pabin.kamil.zadanie_kalkulator_s.Calculator.*;
-import com.pabin.kamil.zadanie_kalkulator_s.Exceptions.UnsupportedCountryException;
+import com.pabin.kamil.zadanie_kalkulator_s.calculator.*;
+import com.pabin.kamil.zadanie_kalkulator_s.client.CurrencyRatingClient;
+import com.pabin.kamil.zadanie_kalkulator_s.calculator.exceptions.UnsupportedCountryException;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;

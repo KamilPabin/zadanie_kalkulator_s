@@ -1,16 +1,21 @@
-package com.pabin.kamil.zadanie_kalkulator_s.Calculator;
+package com.pabin.kamil.zadanie_kalkulator_s.calculator;
 
 
+import com.pabin.kamil.zadanie_kalkulator_s.calculator.dto.NetMonthlySalaryDto;
+import com.pabin.kamil.zadanie_kalkulator_s.calculator.exceptions.UnsupportedCountryException;
+import com.pabin.kamil.zadanie_kalkulator_s.client.CurrencyRating;
+import com.pabin.kamil.zadanie_kalkulator_s.client.CurrencyRatingClient;
 import com.pabin.kamil.zadanie_kalkulator_s.ContractCalculatorService;
-import com.pabin.kamil.zadanie_kalkulator_s.Exceptions.UnsupportedCountryException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -35,13 +40,15 @@ public class ContractCalculatorEndpoint {
     }
 
     @GetMapping("/CalculateContract")
-    BigDecimal getCalculatedContract(@RequestParam(value = "country") String country,
-                                     @RequestParam(value = "salary") BigDecimal salary) {
-        return contractCalculatorService.getCalculatedContractForCountry(country, salary);
+    ResponseEntity<NetMonthlySalaryDto> getCalculatedContract(@RequestParam(value = "country") String country,
+                                                              @RequestParam(value = "salary") BigDecimal salary) {
+        NetMonthlySalaryDto dto = new NetMonthlySalaryDto();
+        dto.salary = contractCalculatorService.getCalculatedContractForCountry(country, salary);
+        return new ResponseEntity<>(dto, HttpStatus.OK);
     }
 
     @GetMapping("/getRating")
-    CurrencyRating getRating(){
+    CurrencyRating getRating() {
         return nbpClient.getRatingFor("eur");
     }
 
