@@ -1,11 +1,11 @@
 package com.pabin.kamil.zadanie_kalkulator_s.calculator;
 
 
+import com.pabin.kamil.zadanie_kalkulator_s.ContractCalculatorService;
 import com.pabin.kamil.zadanie_kalkulator_s.calculator.dto.NetMonthlySalaryDto;
 import com.pabin.kamil.zadanie_kalkulator_s.calculator.exceptions.UnsupportedCountryException;
 import com.pabin.kamil.zadanie_kalkulator_s.client.CurrencyRating;
 import com.pabin.kamil.zadanie_kalkulator_s.client.CurrencyRatingClient;
-import com.pabin.kamil.zadanie_kalkulator_s.ContractCalculatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.http.HttpStatus;
@@ -43,7 +43,8 @@ public class ContractCalculatorEndpoint {
     ResponseEntity<NetMonthlySalaryDto> getCalculatedContract(@RequestParam(value = "country") String country,
                                                               @RequestParam(value = "salary") BigDecimal salary) {
         NetMonthlySalaryDto dto = new NetMonthlySalaryDto();
-        dto.salary = contractCalculatorService.getCalculatedContractForCountry(country, salary);
+        dto.salary = contractCalculatorService.getCalculatedContractForCountry(country, salary)
+                .setScale(2,BigDecimal.ROUND_HALF_UP);
         return new ResponseEntity<>(dto, HttpStatus.OK);
     }
 
